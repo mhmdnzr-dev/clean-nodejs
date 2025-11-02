@@ -11,4 +11,9 @@ serve({
   port: 3000,
 });
 
+app.use('*', async (c, next) => {
+  c.header('Cache-Control', 'public, max-age=31536000, immutable')
+  await next()
+})
+
 console.log("Server running on http://localhost:3000");
