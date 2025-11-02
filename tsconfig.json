@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "commonjs",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["ES2022"],
     "outDir": "./dist",
     "rootDir": "./",
     "strict": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,8 +15,7 @@
     "paths": {
       "@core/*": ["src/core/*"],
       "@infra/*": ["src/infra/*"],
-      "@presentation/*": ["src/presentation/*"],
-      "@orchestration/*": ["src/orchestration/*"]
+      "@presentation/*": ["src/presentation/*"]
     }
   },
   "include": ["src/**/*", "apps/**/*", "tests/**/*", "scripts/**/*"],
