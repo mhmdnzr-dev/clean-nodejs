@@ -5,11 +5,11 @@ WORKDIR /app
 # ---- Build -------------------------------------------------
 FROM base AS builder
 COPY package.json ./
-RUN npm i --force               # installs typescript (devDep)
+RUN npm i --force
 COPY tsconfig.json ./
 COPY src ./src
 COPY apps ./apps
-RUN npx tsc                     # uses the copied tsconfig.json
+RUN npx tsc
 
 # ---- Runtime (tiny) ---------------------------------------
 FROM alpine:3.20
@@ -20,4 +20,4 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 
 EXPOSE 3000
-CMD ["node", "dist/apps/api/main.js"]
+CMD ["node", "dist/apps/api/cluster.js"]
