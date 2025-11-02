@@ -6,13 +6,6 @@
     "lib": ["ES2022"],
     "outDir": "./dist",
     "rootDir": "./",
-    "baseUrl": "./",
-    "ignoreDeprecations": "6.0",
-    "paths": {
-      "@core/*": ["src/core/*"],
-      "@infra/*": ["src/infra/*"],
-      "@presentation/*": ["src/presentation/*"]
-    },
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
