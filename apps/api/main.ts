@@ -1,14 +1,4 @@
-// apps/api/main.ts
-import { Hono } from 'hono';
-import { serve } from '@hono/node-server';
+import { serve } from '@hono/node-server'
+import app from '../../src/presentation/api/server.js'
 
-const app = new Hono();
-
-app.get('/', (c) => c.text('Hono + 1M RPS = 🚀'));
-
-serve({
-  fetch: app.fetch,
-  port: 3000
-});
-
-console.log('Worker running on 3000');
+serve(app)
